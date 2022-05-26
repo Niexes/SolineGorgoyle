@@ -1,7 +1,15 @@
 package com.company;
 
 import java.util.ArrayDeque;
+//TODO ненужный импорт
 
+/*TODO  Задание 2
+поправить правки, и не выебывайся что это не важно
+это блять важно
+
+для всех добавить поле имя
+выводы действий на экран делаются Имя + фраза
+*/
 public class Main {
 
     public static void main(String[] args) {
@@ -19,7 +27,7 @@ public class Main {
 
 
 
-
+//TODO охуеть а эти пустые строки кому?
 
 
 

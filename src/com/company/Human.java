@@ -21,7 +21,10 @@ package com.company;
 Для взрослого указание роста и веса только через конструктор при создании
 Для студента вес пусть снижается на 1кг при получении хвоста, и увеличивается при удалении оного*/
 
-abstract class Human implements Skill{
+abstract class Human implements Skill{ //TODO классы модели не делаются абстрактными
+    //класс, который содержит описание сущности - это класс модели
+    //абстракция используется для классов сервисов - где написана логика, алгоритмы
+    //интерфейс хорошо, но все интерфейсы должны быть наречиями (Callable, Serializable)
     private int height;
     private int weight;
 
@@ -42,6 +45,7 @@ abstract class Human implements Skill{
         return this.weight;
     }
 
+    //TODO эта аннотация для имплементации интерфейса не используется
     @Override
     public void Walk() {
         System.out.println("Передвигаюсь");
