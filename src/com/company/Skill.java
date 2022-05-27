@@ -1,6 +1,7 @@
 package com.company;
 
-public interface Skill {
-    public void Walk();
-    public void Talk();
+interface Skillable {
+    void walk();
+
+    void talk();
 }

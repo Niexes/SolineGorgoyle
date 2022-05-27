@@ -1,25 +1,23 @@
 package com.company;
 
-public class AdultMan extends Human{
-   private int zarplata;
+public class AdultMan extends Human {
+    private int salary;
 
-    AdultMan(int w, int h) {
+    public AdultMan(int w, int h) {
         setWeight(w);
         setHeight(h);
     }
 
-
-    void setZarplata(int zarplata) {
-        this.zarplata = zarplata;
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
-    public int getZarplata() {
-        return zarplata;
+    public int getSalary() {
+        return salary;
     }
 
-
-
-    public void WalkToJob() {
-        System.out.println("Опять на ебанную работу идти");
+    public void walkToJob() {
+        System.out.println(getName() + " say: опять на ебанную работу идти");
     }
+
 }
