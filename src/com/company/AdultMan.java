@@ -1,7 +1,7 @@
 package com.company;
 
 public class AdultMan extends Human {
-    private int salary;
+    private int salary;//go fuck yourself
 
     public AdultMan(int w, int h) {
         setWeight(w);
