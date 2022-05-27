@@ -1,36 +1,40 @@
 package com.company;
 
-public class Student extends Human{
-   private int Dolgi;//TODO сделай долги списком из строк
+import java.util.Scanner;
+import java.util.ArrayList;
 
+public class Student extends Human {
 
-    void setDolgi(int dolgi) {
-      Dolgi = dolgi;
-   }
-   int getDolgi() {
-       return this.Dolgi;
-   }
-   void drink() {
-      System.out.println("Щас бы попить пивасика");
-   }
-   //Для студента вес пусть снижается на 1кг при получении хвоста, и увеличивается при удалении оного
+    private ArrayList<String> debt = new ArrayList<String>();
 
-   int RaschetHvostov() {//TODO методы с маленькой буквы, модификатор доступа методов (проверить везде) (private public)
-      int NewWeightStudent = getWeight();//а если рост не указан?
-      if (getDolgi() >= 1) {
-         for (int i = 1; i <= getDolgi(); i++) {
-            NewWeightStudent = getWeight() - 1;
-         }
-      }
-      return NewWeightStudent;
-   }
-    //TODO соответственно  - добавить долг как строку, убрать долг по имени
-   void slovitHvost() {
-       int poluchit=getDolgi()-1;
-   }
-   void sdatHvost() {
-       int sdat = getDolgi()+1;//внутри используй поле, а не метод
+    public void getDebtList() {
+        for (int i = 0; i < debt.size() - 1; i++) {
+            System.out.println(debt.get(i));
+        }
+    }
 
-   }
+    public int getDebtSize() {
+        return debt.size();
+    } // я не уверена нужно ли здесь это вообще, как написать сеттр и главное зачем тоже не понимаю
+
+    public void drink() {
+        System.out.println(getName() + " say: щас бы попить пивасика");
+    }
+    //Для студента вес пусть снижается на 1кг при получении хвоста, и увеличивается при удалении оного
+
+    public void dontPass(String dolg) {
+        debt.add(0, dolg);
+        int n = getWeight() - 1;
+        setWeight(n);
+    }
+
+    public void passExam(String dolg) {
+        if (debt.contains(dolg)) {
+            debt.remove(dolg);
+            System.out.println("Долг " + dolg + " сдан!");
+            int studentsWeight = getWeight() + 1;
+        } else {
+            System.out.println("У студента " + getName() + " нет долга " + dolg);
+        } //внутри используй поле, а не метод ???????????????? я dolgi заменила на список debt
+    }
 }
-//TODO проверить везде - this.dolgi = dolgi, this.height = height

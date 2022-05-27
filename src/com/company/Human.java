@@ -1,7 +1,4 @@
 package com.company;
-
-
-
 /*Опиши мне иерархию следующую: должны быть классы - взрослый, ребенок, студент и солевая горгулья
         Каждый должен уметь ходить, говорить (выводы на экран)
         Взрослый ходит на работу
@@ -21,40 +18,45 @@ package com.company;
 Для взрослого указание роста и веса только через конструктор при создании
 Для студента вес пусть снижается на 1кг при получении хвоста, и увеличивается при удалении оного*/
 
-abstract class Human implements Skill{ //TODO классы модели не делаются абстрактными
+class Human implements Skillable {
     //класс, который содержит описание сущности - это класс модели
     //абстракция используется для классов сервисов - где написана логика, алгоритмы
     //интерфейс хорошо, но все интерфейсы должны быть наречиями (Callable, Serializable)
     private int height;
     private int weight;
+    private String name;
 
 
-    void setHeight(int height) {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setHeight(int height) {
         this.height = height;
     }
 
-    int getHeight() {
+    public int getHeight() {
         return this.height;
     }
 
-    void setWeight(int weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    int getWeight() {
+    public int getWeight() {
         return this.weight;
     }
 
-    //TODO эта аннотация для имплементации интерфейса не используется
-    @Override
-    public void Walk() {
-        System.out.println("Передвигаюсь");
+    public void walk() {
+        System.out.println(getName() + " is Walking");
     }
 
-    @Override
-    public void Talk() {
-        System.out.println("Много пизжу");
-
+    public void talk() {
+        System.out.println(getName() + "Talking");
     }
 }
 
