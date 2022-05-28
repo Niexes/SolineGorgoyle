@@ -2,50 +2,28 @@ package com.company;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-/*TODO  Задание 2
-поправить правки, и не выебывайся что это не важно
-это блять важно
+/*1. сделать считывание имен и других данных через консоль
 
-для всех добавить поле имя
-выводы действий на экран делаются Имя + фраза
+   2.  в консоли будет приложение с менюшкой, пользователю на консоль выводится меню с цифрами, он вводит цифру, отсюда пляшем
+   работа с меню через свич
+-добавить чувака (открывается выбор какого чувака добавить)
+-список чуваков
+-изменить данные чувака
+
+   3. должен быть класс обработчик (сервисная логика) со всеми этими функциями (добавить, изменить, получить список)
+
+   4. проверка введеннных данных из консоли обязательна
 */
+
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Child child1 = new Child();
-        child1.setName("Саша");
-        child1.talk();
-        child1.drooling();
-        AdultMan man1 = new AdultMan(55, 185);
-        man1.setName("Vitya");
-        man1.walk();
-        man1.walkToJob();
-        AdultMan man2 = new AdultMan(76, 173);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println(man2.height);
-        System.out.println(man2.weight);
+        Menu newMenu = new Menu();
+        newMenu.showMenu();
 
-        SolineGorgoyle haaaaaaa = new SolineGorgoyle();
-        haaaaaaa.setHeight(176);
-        haaaaaaa.setWeight(45);
-        haaaaaaa.catchPrihod(0.85);
-        haaaaaaa.setSolenost(0.2);
-        System.out.println(haaaaaaa.getSolenost());
-        System.out.println(haaaaaaa.getWeight());
-        Student student1 = new Student();
-        student1.setName("Grisha");
-        student1.setWeight(98);
-        student1.dontPass("Физра");
-        student1.dontPass("Матан");
-        student1.dontPass("Матстат");
-        student1.passExam("Линал");
-        student1.passExam("Физра");
-        System.out.println(student1.getWeight());
-        student1.dontPass("Физра2");
-        student1.dontPass("Матан2");
-        student1.dontPass("Матстат2");
-        student1.getDebtList();
-        System.out.println(student1.getWeight());
     }
 }
