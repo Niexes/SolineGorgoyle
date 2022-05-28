@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -15,15 +13,18 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Child Sasha = new Child();
-        Sasha.talk();
-        AdultMan Vitya = new AdultMan(55, 185);
-        Vitya.walk();
-        Vitya.walkToJob();
-        AdultMan Igor = new AdultMan(76, 173);
+        Child child1 = new Child();
+        child1.setName("Саша");
+        child1.talk();
+        child1.drooling();
+        AdultMan man1 = new AdultMan(55, 185);
+        man1.setName("Vitya");
+        man1.walk();
+        man1.walkToJob();
+        AdultMan man2 = new AdultMan(76, 173);
 
-        System.out.println(Igor.getHeight());
-        System.out.println(Igor.getWeight());
+        System.out.println(man2.height);
+        System.out.println(man2.weight);
 
         SolineGorgoyle haaaaaaa = new SolineGorgoyle();
         haaaaaaa.setHeight(176);
@@ -46,7 +47,5 @@ public class Main {
         student1.dontPass("Матстат2");
         student1.getDebtList();
         System.out.println(student1.getWeight());
-
-
     }
 }

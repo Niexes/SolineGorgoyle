@@ -17,7 +17,7 @@ public class AdultMan extends Human {
     }
 
     public void walkToJob() {
-        System.out.println(getName() + " say: опять на ебанную работу идти");
+        System.out.println(this.name + " say: опять на ебанную работу идти");
     }
 
 }
