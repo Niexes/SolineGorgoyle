@@ -12,6 +12,6 @@ public class Child extends Human {
     }
 
     public void drooling() {
-        System.out.println(getName() + " опять пускает слюни");
+        System.out.println(this.name + " опять пускает слюни");
     }
 }
