@@ -18,9 +18,6 @@ class Human implements Skillable {
     проверка введеннных данных из консоли обязательна
 
     работа с меню через свич*/
-    //класс, который содержит описание сущности - это класс модели
-    //абстракция используется для классов сервисов - где написана логика, алгоритмы
-    //интерфейс хорошо, но все интерфейсы должны быть наречиями (Callable, Serializable)
     protected int height;
     protected int weight;
     protected String name;
@@ -51,19 +48,47 @@ class Human implements Skillable {
     }
 
     public void walk() {
-        System.out.println(this.name + " is Walking");
+        System.out.println(this.name + " is walking");
     }
 
     public void talk() {
-        System.out.println(this.name + "Talking");
+        System.out.println(this.name + " is talking");
     }
 
-   public void addStudent() {
+    public void drooling() {
+    }
+
+    public void drink() {
+
+    }
+
+    public void dontPass(String next) {
+
+    }
+
+    public void passExam(String next) {
+
+    }
+
+    public void walkToJob() {
+
+    }
+
+    public void catchPrihod() {
+
+    }
+
+    public void addStudent() {
         Student st1 = new Student();
         setHeight(sc.nextInt());
         setWeight(sc.nextInt());
         setName(sc.next());
     }
+    @Override
+    public String toString() {
+        return "Human name " + this.name + ", " + " human weight " + this.weight + ", " + " human height " + this.height;
+    }
+
 }
 
 

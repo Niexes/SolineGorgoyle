@@ -23,7 +23,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Menu newMenu = new Menu();
-        newMenu.showMenu();
+        Base base = new Base();
+        newMenu.showMenu(base);
 
     }
 }

@@ -18,7 +18,7 @@ public class Student extends Human {
     } // я не уверена нужно ли здесь это вообще, как написать сеттр и главное зачем тоже не понимаю
 
     public void drink() {
-        System.out.println(this.name + " say: щас бы попить пивасика");
+        System.out.println(this.name + " говорит: щас бы попить пивасика");
     }
     //Для студента вес пусть снижается на 1кг при получении хвоста, и увеличивается при удалении оного
 
@@ -36,5 +36,10 @@ public class Student extends Human {
         } else {
             System.out.println("У студента " + this.name + " нет долга " + dolg);
         } //внутри используй поле, а не метод ???????????????? я dolgi заменила на список debt
+    }
+
+    @Override
+    public String toString() {
+        return "Student's name " + this.name + ", " + " student's weight " + this.weight + ", " + " student's height " + this.height;
     }
 }

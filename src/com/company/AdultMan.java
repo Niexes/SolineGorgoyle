@@ -20,4 +20,9 @@ public class AdultMan extends Human {
         System.out.println(this.name + " say: опять на ебанную работу идти");
     }
 
+    @Override
+    public String toString() {
+        return "Adult man name " + this.name + ", " + " adult man weight " + this.weight + ", " + " adult man height " + this.height;
+    }
+
 }

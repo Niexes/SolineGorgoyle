@@ -19,7 +19,7 @@ public class SolineGorgoyle extends Human {
         return solenost;
     }
 
-   public int catchPrihod(double prihod) {
+   public double catchPrihod(double prihod) {
         if (prihod != 0) {
             System.out.println(this.name + " say: о блять щас словлю приход");
             if (prihod > 0.5) {
@@ -33,8 +33,13 @@ public class SolineGorgoyle extends Human {
             int newHeight = h + (int) (Math.random() * h1);
             setWeight(newWeight);
             setHeight(newHeight);
-            solenost = (int) prihod;
+            solenost =  prihod;
         }
-        return (int) solenost;
+        return solenost;
+    }
+
+    @Override
+    public String toString() {
+        return "Имя солевой горгульи " + this.name + ", " + " вес солевой горгульи " + this.weight + ", " + " рост солевой горгульи " + this.height;
     }
 }

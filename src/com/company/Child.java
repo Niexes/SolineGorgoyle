@@ -14,4 +14,9 @@ public class Child extends Human {
     public void drooling() {
         System.out.println(this.name + " опять пускает слюни");
     }
+
+    @Override
+    public String toString() {
+        return "Child name " + this.name + ", " + " child weight " + this.weight + ", " + " child height " + this.height;
+    }
 }
