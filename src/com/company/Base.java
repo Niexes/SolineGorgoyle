@@ -2,50 +2,60 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Base {
     Scanner sc = new Scanner(System.in);
-    List<Human> newObj = new ArrayList<Human>();
+    List<Human> humans = new ArrayList<Human>();
 
     public void addStudent(Student newStudent) {
-        newObj.add(0, newStudent);
+        humans.add(0, newStudent);
     }
 
     public void addChild(Child newChild) {
-        newObj.add(0, newChild);
+        humans.add(0, newChild);
     }
 
     public void addAdultMan(AdultMan newAdult) {
-        newObj.add(0, newAdult);
+        humans.add(0, newAdult);
     }
 
     public void addSolineGorgoyle(SolineGorgoyle newSoline) {
-        newObj.add(0, newSoline);
+        humans.add(0, newSoline);
     }
 
     public void showDudesList() {
-        for (int i = 0; i <= newObj.size() - 1; i++) {
-            System.out.println(newObj.get(i));
-        }
-        if (newObj.size() == 0) {
+        if (humans.isEmpty()) {
             System.out.println("Вы еще никого не добавили\n");
+            return;
         }
+        humans.forEach(human -> System.out.println(human.toString()));
     }
 
-    public boolean findDude(String s) {
-        for (int i = 0; i <= newObj.size() - 1; i++) {
-            if (((newObj.get(i)).getName().equals(s))) {
+    public boolean findDude(String name) {
+        for (Human human : humans) {
+            if ((human.getName().equals(name))) {
                 return true;
             }
         }
         return false;
     }
+//(2+2) - 1 * 7 => -3
+    public boolean findDudeMap(String name) {
+        Map<String, Human> humansMap = humans.stream().collect(Collectors.toMap(human->human.getName(), human -> human));
+        return humansMap.containsKey(name);
+    }
 
-    public Human getDude(String s) {
-        for (int i = 0; i <= newObj.size() - 1; i++) {
-            if (((newObj.get(i)).getName().equals(s))) {
-                return (newObj.get(i));
+    public Human findDudeStream(String name) {
+        return humans.stream().filter(human -> human.getName().equals(name)).findAny().orElse(null);
+    }
+
+    public Human getDude(String name) {
+        for (int i = 0; i <= humans.size() - 1; i++) {
+            if (((humans.get(i)).getName().equals(name))) {
+                return (humans.get(i));
             }
         }
         return null;
@@ -101,9 +111,11 @@ public class Base {
             case 7:
                 human.walkToJob();
                 break;
-            case 8: human.catchPrihod();
-            break;
-            case 9: break;
+            case 8:
+                human.catchPrihod();
+                break;
+            case 9:
+                break;
             default:
                 System.out.println("Введи что-то из предложенного");
         }
