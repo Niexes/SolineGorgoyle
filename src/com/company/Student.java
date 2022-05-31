@@ -40,6 +40,6 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return "Student's name " + this.name + ", " + " student's weight " + this.weight + ", " + " student's height " + this.height;
+        return "{Студент: имя: " + this.name + ", вес: " + this.weight +", рост: " + this.height+"}";
     }
 }

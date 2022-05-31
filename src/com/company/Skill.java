@@ -9,7 +9,7 @@ interface Skillable {
 
     void drink();
 
-    void dontPass(String next);
+    //void dontPass(String next);
 
     void passExam(String next);
 

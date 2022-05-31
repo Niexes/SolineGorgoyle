@@ -48,45 +48,40 @@ class Human implements Skillable {
     }
 
     public void walk() {
-        System.out.println(this.name + " is walking");
+        System.out.println(this.name + " is walking\n");
     }
 
     public void talk() {
-        System.out.println(this.name + " is talking");
+        System.out.println(this.name + " is talking\n");
     }
 
     public void drooling() {
+        System.out.println("Только ребенок может пускать слюни\n");
     }
 
     public void drink() {
-
+        System.out.println("Только студент может попить пива\n");
     }
 
-    public void dontPass(String next) {
-
+    public void dontPass() {
+        System.out.println("Только студент может не сдать экзамен\n");
     }
 
     public void passExam(String next) {
-
+        System.out.println("Только студент может сдать экзамен\n");
     }
 
     public void walkToJob() {
-
+        System.out.println("Только взрослый должен ходить на работу\n");
     }
 
     public void catchPrihod() {
-
+        System.out.println("Только горгулья ловит приход\n");
     }
 
-    public void addStudent() {
-        Student st1 = new Student();
-        setHeight(sc.nextInt());
-        setWeight(sc.nextInt());
-        setName(sc.next());
-    }
     @Override
     public String toString() {
-        return "Human name " + this.name + ", " + " human weight " + this.weight + ", " + " human height " + this.height;
+        return "{Человек: имя: " + this.name + ", вес: " + this.weight +", рост: " + this.height+"}";
     }
 
 }

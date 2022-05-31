@@ -17,6 +17,6 @@ public class Child extends Human {
 
     @Override
     public String toString() {
-        return "Child name " + this.name + ", " + " child weight " + this.weight + ", " + " child height " + this.height;
+        return "{Ребенок: имя: " + this.name + ", вес: " + this.weight +", рост: " + this.height+"}";
     }
 }

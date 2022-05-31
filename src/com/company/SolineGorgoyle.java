@@ -40,6 +40,6 @@ public class SolineGorgoyle extends Human {
 
     @Override
     public String toString() {
-        return "Имя солевой горгульи " + this.name + ", " + " вес солевой горгульи " + this.weight + ", " + " рост солевой горгульи " + this.height;
+        return "{Солевая горгулья: имя: " + this.name + ", вес: " + this.weight +", рост: " + this.height+"}";
     }
 }

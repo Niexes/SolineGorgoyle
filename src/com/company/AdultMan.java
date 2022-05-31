@@ -22,7 +22,7 @@ public class AdultMan extends Human {
 
     @Override
     public String toString() {
-        return "Adult man name " + this.name + ", " + " adult man weight " + this.weight + ", " + " adult man height " + this.height;
+        return "{Взрослый: имя: " + this.name + ", вес: " + this.weight +", рост: " + this.height+"}";
     }
 
 }

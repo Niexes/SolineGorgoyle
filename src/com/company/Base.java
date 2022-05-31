@@ -42,7 +42,7 @@ public class Base {
         }
         return false;
     }
-//(2+2) - 1 * 7 => -3
+
     public boolean findDudeMap(String name) {
         Map<String, Human> humansMap = humans.stream().collect(Collectors.toMap(human->human.getName(), human -> human));
         return humansMap.containsKey(name);
@@ -61,6 +61,16 @@ public class Base {
         return null;
     }
 
+    //----------------------КОПИЯ МЕТОДА ИЗ МЕНЮ, НУЖНО ПОЯСНЕНИЕ-----------------------
+    public boolean checkNumber(String s) {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+    //---------------------------------------------------------------------------------------
     public void changeSomeParam(Human human, int pick) {
         switch (pick) {
             case 1:
@@ -69,11 +79,25 @@ public class Base {
                 break;
             case 2:
                 System.out.println("Введите новый вес для " + human.getName());
-                human.setWeight(sc.nextInt());
+                String value = sc.next();
+                sc.nextLine();
+                while (!checkNumber(value)) {
+                    System.out.println("Вес не может содержать буквенное значение");
+                    value = sc.nextLine();
+                }
+                int val = Integer.parseInt(value);
+                human.setWeight(val);
                 break;
             case 3:
                 System.out.println("Введите новый рост для " + human.getName());
-                human.setHeight(sc.nextInt());
+                String value2 = sc.next();
+                sc.nextLine();
+                while (!checkNumber(value2)) {
+                    System.out.println("Рост не может содержать буквенное значение");
+                    value2 = sc.nextLine();
+                }
+                int val2 = Integer.parseInt(value2);
+                human.setHeight(val2);
                 break;
             case 4:
                 break;
@@ -103,7 +127,7 @@ public class Base {
                 human.drink();
                 break;
             case 5:
-                human.dontPass(sc.next());
+                human.dontPass();
                 break;
             case 6:
                 human.passExam(sc.next());
